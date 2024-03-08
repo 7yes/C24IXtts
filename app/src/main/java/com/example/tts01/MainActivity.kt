@@ -11,9 +11,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tts01.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
 import java.util.Objects
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var binding: ActivityMainBinding
     private var tts: TextToSpeech? = null
@@ -28,11 +30,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             insets
         }
         tts = TextToSpeech(this, this)
-        binding.ivMic.setOnClickListener {
-            callMic()
-        }
-        binding.ivSpeaker.setOnClickListener { speak() }
-
+//        binding.ivMic.setOnClickListener { callMic() }
+//        binding.ivSpeaker.setOnClickListener { speak() }
     }
 
     private fun callMic() {
@@ -56,14 +55,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 val res: ArrayList<String> =
                     data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS) as ArrayList<String>
                 Log.d("TAJ", "onActivityResult: ${Objects.requireNonNull(res[0])}")
-                binding.tvText.text = Objects.requireNonNull(res[0]) + " from Numina group"
+               // binding.tvText.text = Objects.requireNonNull(res[0]) + " from Numina group"
             }
         }
     }
 
     private fun speak() {
-        val text = binding.tvText.text.toString()
-        tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
+       // val text = binding.tvText.text.toString()
+        //tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
     }
 
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundSecundary"
+    android:paddingLeft="8dp"
+    tools:context=".bottom.BottomFragment">
+
+
+    <TextView
+        android:id="@+id/tvOperatorID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvlastResponse"
+        android:text="Operator ID:  " />
+    <TextView
+        android:id="@+id/tvlastResponse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tvOperatorID"
+        app:layout_constraintTop_toBottomOf="@id/tvOperatorID"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Last Response: " />
+    <TextView
+        android:id="@+id/etOperatorID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvOperatorID"
+        app:layout_constraintTop_toTopOf="@id/tvOperatorID"
+        tools:text="123"/>
+    <TextView
+        android:id="@+id/etOperatorResponse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvlastResponse"
+        app:layout_constraintTop_toTopOf="@id/tvlastResponse"
+        tools:text="front"/>
+    <Button
+        android:id="@+id/btnQuit"
+        android:text="Quit"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
