@@ -12,6 +12,9 @@ class VickVM @Inject constructor() : ViewModel() {
 private val _title = MutableLiveData<String>()
 val title: LiveData<String> = _title
 
+private val _subTitle = MutableLiveData<String>()
+val subTitle: LiveData<String> = _subTitle
+
     fun logIn(input: String): Boolean {
        var a=0
         try {
@@ -22,4 +25,7 @@ val title: LiveData<String> = _title
         }
        return a==605
     }
+    fun setTitle(title:String) = _title.postValue(title)
+    fun setSubtitle(s: String) = _subTitle.postValue(s)
+
 }

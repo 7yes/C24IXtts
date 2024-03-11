@@ -4,11 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgourndThird"
+    android:padding="8dp"
     tools:context=".presentation.body.simpledialog.SimpleDialogFragment">
 
     <TextView
+        android:id="@+id/subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:text="@string/hello_blank_fragment" />
 
 

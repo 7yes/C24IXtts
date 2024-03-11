@@ -9,7 +9,11 @@
         android:id="@+id/menuFragment"
         android:name="com.example.tts01.presentation.body.menu.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" />
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_simpleDialogFragment"
+            app:destination="@id/simpleDialogFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.tts01.presentation.body.login.LoginFragment"
@@ -19,4 +23,9 @@
             android:id="@+id/action_loginFragment_to_menuFragment4"
             app:destination="@id/menuFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/simpleDialogFragment"
+        android:name="com.example.tts01.presentation.body.simpledialog.SimpleDialogFragment"
+        android:label="fragment_simple_dialog"
+        tools:layout="@layout/fragment_simple_dialog" />
 </navigation>
