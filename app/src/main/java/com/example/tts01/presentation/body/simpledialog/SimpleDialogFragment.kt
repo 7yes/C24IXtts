@@ -1,22 +1,20 @@
-package com.example.tts01.bottom
+package com.example.tts01.presentation.body.simpledialog
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.tts01.databinding.FragmentBottomBinding
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.tts01.databinding.FragmentSimpleDialogBinding
 
-@AndroidEntryPoint
-class BottomFragment : Fragment() {
-    private var _binding: FragmentBottomBinding? = null
+class SimpleDialogFragment : Fragment() {
+    private var _binding: FragmentSimpleDialogBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentBottomBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentSimpleDialogBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 

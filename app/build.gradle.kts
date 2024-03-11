@@ -63,6 +63,13 @@ dependencies {
 
     //livedata and coroutines
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    //fragments
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
+    // ViewModel
+    //implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$2.7.0")
+    //viewmodel
+   // implementation("androidx.activity:activity-ktx:1.8.2") // by viewModels()
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

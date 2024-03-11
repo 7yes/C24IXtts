@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/backgroundSecundary"
     android:paddingLeft="8dp"
-    tools:context=".bottom.BottomFragment">
+    tools:context=".presentation.bottom.BottomFragment">
 
 
     <TextView

@@ -1,4 +1,4 @@
-package com.example.tts01
+package com.example.tts01.presentation
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,11 @@ import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.tts01.R
 import com.example.tts01.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
@@ -19,6 +21,7 @@ import java.util.Objects
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var binding: ActivityMainBinding
     private var tts: TextToSpeech? = null
+    private val viewmodel: VickVM by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,6 +33,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             insets
         }
         tts = TextToSpeech(this, this)
+        viewmodel.title.observe(this) {
+            binding.tvTitle.text = it
+        }
 //        binding.ivMic.setOnClickListener { callMic() }
 //        binding.ivSpeaker.setOnClickListener { speak() }
     }
@@ -55,13 +61,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 val res: ArrayList<String> =
                     data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS) as ArrayList<String>
                 Log.d("TAJ", "onActivityResult: ${Objects.requireNonNull(res[0])}")
-               // binding.tvText.text = Objects.requireNonNull(res[0]) + " from Numina group"
+                // binding.tvText.text = Objects.requireNonNull(res[0]) + " from Numina group"
             }
         }
     }
 
     private fun speak() {
-       // val text = binding.tvText.text.toString()
+        // val text = binding.tvText.text.toString()
         //tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
     }
 
